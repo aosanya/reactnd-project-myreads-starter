@@ -6,18 +6,45 @@ import { Link } from 'react-router-dom'
 class BookShelves extends Component {
     state = {
         books : [],
-        currentlyReading : [],
-        wantToRead : [],
-        read : []
+        myReads : [],
       }
 
       loadMyBooks = () => {
-        this.setState((currentState) => ({currentlyReading: currentState.currentlyReading.concat(this.state.books[0])}))
-        this.setState((currentState) => ({currentlyReading: currentState.currentlyReading.concat(this.state.books[1])}))
-        this.setState((currentState) => ({wantToRead: currentState.currentlyReading.concat(this.state.books[2])}))
-        this.setState((currentState) => ({wantToRead: currentState.currentlyReading.concat(this.state.books[3])}))
-        this.setState((currentState) => ({read: currentState.currentlyReading.concat(this.state.books[4])}))
-        this.setState((currentState) => ({read: currentState.currentlyReading.concat(this.state.books[5])}))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[0], shelf : "currentlyReading"})
+                }
+            ))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[1], shelf : "currentlyReading"})
+                }
+            ))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[2], shelf : "wantToRead"})
+                }
+            ))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[3], shelf : "wantToRead"})
+                }
+            ))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[4], shelf : "read"})
+                }
+            ))
+            this.setState((currentState) => (
+                {
+                    myReads: currentState.myReads.concat({book : this.state.books[5], shelf : "read"})
+                }
+            ))
+
+      }
+
+      getShelf(shelf) {
+        return this.state.myReads.filter((shelvedBook) =>(shelvedBook.shelf === shelf))
       }
 
       componentDidMount() {
@@ -42,9 +69,9 @@ class BookShelves extends Component {
             <div className="list-books-content">
               <div>
                 <div className="bookshelves">
-                    <Bookshelf title="Currently Reading" books={this.state.currentlyReading} shelf="currentlyReading"/>
-                    <Bookshelf title="Want to Read" books={this.state.wantToRead} shelf="wantToRead"/>
-                    <Bookshelf title="Read" books={this.state.read} shelf="read"/>
+                    <Bookshelf title="Currently Reading" shelvedBooks={this.getShelf("currentlyReading")}/>
+                    <Bookshelf title="Want to Read" shelvedBooks={this.getShelf("wantToRead")}/>
+                    <Bookshelf title="Read" shelvedBooks={this.getShelf("read")}/>
                 </div>
                 </div>
             </div>

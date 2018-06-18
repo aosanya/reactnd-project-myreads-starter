@@ -1,5 +1,5 @@
 import React from 'react'
-import AddBook from './AddBook'
+import Search from './Search'
 import Bookshelves from './Bookshelves'
 import './App.css'
 import { Route } from 'react-router-dom'
@@ -15,8 +15,8 @@ class BooksApp extends React.Component {
          <Route exact path='/' render={() => (
             <Bookshelves/>
         )} />
-        <Route path='/AddBook' render={() => (
-            <AddBook/>
+        <Route path='/search' render={() => (
+            <Search/>
         )} />
       </div>
     )
