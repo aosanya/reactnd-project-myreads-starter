@@ -8,6 +8,11 @@ body, .app {
   background: white;
 }
 
+
+h5 {
+  color: #a5a5a5;
+}
+
 /* main page */
 
 .list-books-title {

@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class BookshelfChanger extends Component {
   static propTypes = {
-
+    book : PropTypes.object,
+    shelf : PropTypes.string,
+    handleShelfChange : PropTypes.func
   }
 
   state = {
 
   }
 
-  handleShelfChange = event => {
-
+  onChange = (event) => {
+    this.props.handleShelfChange(this.props.book, event.target.value)
   }
 
   render() {
-    const { shelf } = this.props
+    const {book, shelf } = this.props
     return (
-        <div className="book-shelf-changer">
-            <select defaultValue={shelf} onChange={this.handleShelfChange()}>
+        <div className="book-shelf-changer" key={`book-shelf-changer-${book.id}`}>
+            <select defaultValue={shelf} onChange={this.onChange}>
             <option value="move" disabled>Move to...</option>
             <option value="currentlyReading">Currently Reading</option>
             <option value="wantToRead">Want to Read</option>
