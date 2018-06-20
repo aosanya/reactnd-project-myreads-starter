@@ -8,18 +8,14 @@ class Book extends Component {
         handleShelfChange : PropTypes.func
     }
 
-    state = {
-
-    }
-
     render() {
         const { book, shelf, handleShelfChange  } = this.props
-        return (
 
+        return (
             <div className="book">
                 <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks["smallThumbnail"]})` : 'none' }}></div>
-                <BookshelfChanger book={book} shelf={shelf} handleShelfChange={handleShelfChange}/>
+                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks["smallThumbnail"]})` : 'none' }}></div>
+                    <BookshelfChanger book={book} shelf={shelf} handleShelfChange={handleShelfChange}/>
                 </div>
                 <div className="book-title">{book.title}</div>
                 <div className="book-authors">

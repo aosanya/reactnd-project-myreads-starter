@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import Bookshelf from './Bookshelf'
 import { Link } from 'react-router-dom'
-import * as bookShelvesLogic from './../Logic/Bookshelves'
-import * as myReadsLogic from './../Logic/MyReads'
+import * as bookShelvesLogic from './../logic/Bookshelves'
+import * as myReadsLogic from './../logic/MyReads'
 
 class BookShelves extends Component {
     state = {
         Bookshelves : [],
         myReads : [],
-      }
-
+    }
 
     componentDidMount() {
         if (this.props.location.state === undefined){
@@ -42,6 +41,7 @@ class BookShelves extends Component {
     }
 
     render() {
+        console.log(this.state.myReads)
         return (
             <div className="list-books">
                 <div className="list-books-title">

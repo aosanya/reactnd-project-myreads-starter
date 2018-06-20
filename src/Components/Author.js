@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 
 class Author extends Component {
-  static propTypes = {
-
-  }
-
-
   render() {
     const {author} = this.props
     return (

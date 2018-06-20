@@ -1,6 +1,6 @@
 # MyReads Project
 
-This is the the final assessment project for Udacity's React Fundamentals course. 
+This is the the final assessment project for Udacity's React Fundamentals course.
 
 ## TL;DR
 
@@ -23,10 +23,21 @@ To get started developing right away:
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    └── components
+        ├── Author.js # Displays a book author.
+        ├── Book.js # Displays a book.
+        ├── Bookshelf.js # Displays a list of books under a category(in "Currently Reading", "Want to Read" or "Read").
+        ├── BookshelfChanger.js # Contains the dropdown to select a book category. The category change is handled by the bookshelves component.
+        ├── Bookshelves.js # Display the different bookshelves and handles the changes in category.
+        └── Search.js # Used to search for books and add them to categories
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
     │   ├── arrow-back.svg
     │   └── arrow-drop-down.svg
+    └── logic
+        ├── Book.js # Contains functions based on a book.
+        ├── Bookshelves.js # Contains functions based on Bookshelves.
+        └── MyReads.js # Contains functions based on books picked by user
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
@@ -61,7 +72,7 @@ update(book, shelf)
 ```
 
 * book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
+* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]
 * Returns a Promise which resolves to a JSON object containing the response data of the POST request
 
 ### `search`

@@ -1,6 +1,6 @@
 import React from 'react'
-import Search from './Components/Search'
-import Bookshelves from './Components/Bookshelves'
+import Search from './components/Search'
+import Bookshelves from './components/Bookshelves'
 import './App.css'
 import { Route } from 'react-router-dom'
 

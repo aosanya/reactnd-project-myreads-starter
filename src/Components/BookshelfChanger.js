@@ -8,10 +8,6 @@ class BookshelfChanger extends Component {
     handleShelfChange : PropTypes.func
   }
 
-  state = {
-
-  }
-
   onChange = (event) => {
     this.props.handleShelfChange(this.props.book, event.target.value)
   }

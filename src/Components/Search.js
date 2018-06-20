@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from './../BooksAPI'
 import './../App.css'
 import Bookshelf from './Bookshelf'
-import * as bookLogic from './../Logic/Book'
-import * as myReadsLogic from './../Logic/MyReads'
+import * as bookLogic from './../logic/Book'
+import * as myReadsLogic from './../logic/MyReads'
 
 class Search extends Component {
     state = {
@@ -32,7 +32,6 @@ class Search extends Component {
         this.setState((currentState) => ({searchResults: []}))
     }
 
-
     callSearchApi = (searchCriteria) =>{
         BooksAPI.search(searchCriteria)
             .then((searchResults) => {
@@ -42,6 +41,7 @@ class Search extends Component {
 
     loadResults = (searchResults) => {
         if (searchResults === undefined) {
+            this.setState((currentState) => ({searchResults: searchResults.map((result) => ({book : result, shelf : bookLogic.getShelf(result, this.state.myReads)}))}))
             this.clearSearch()
             return
         }

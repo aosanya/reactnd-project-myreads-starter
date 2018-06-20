@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import Book from './../Components/Book'
+import Book from './../components/Book'
 import PropTypes from 'prop-types';
 
 class BookShelf extends Component {
     static propTypes = {
         handleShelfChange : PropTypes.func
     }
-
 
     info = () => {
         return `showing ${this.props.shelvedBooks.length} ${this.props.shelvedBooks.length === 1 ? ` book` : ` books`}`
