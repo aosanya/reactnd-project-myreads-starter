@@ -4,12 +4,18 @@ This is the the final assessment project for Udacity's React Fundamentals course
 
 ## TL;DR
 
-To get started developing right away:
+To run the application :
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
+* the app should load with 3 empty sections
+* to add a new Book to MyReads, click on the (+) sign. This takes you to the search page
+* enter your search criteria to fetch books using the BookApi
+* selecting a book will display a context menu that can be used to sort the book to a desired section
+* click the <- sign to go back to the shelves. The selected books should be listed
+* further sorting using the book context menu can be done in the shelves as well
 
-## What You're Getting
+## Folder Structure
 ```bash
 ├── CONTRIBUTING.md
 ├── README.md - This file.
@@ -41,8 +47,6 @@ To get started developing right away:
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
-
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
 
 ## Backend Server
 
@@ -93,9 +97,3 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
